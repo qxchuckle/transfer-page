@@ -8,5 +8,10 @@ self.addEventListener('fetch', async event => {
 });
 
 const handle = async (req) => {
-    return fetch(req.url.replace("https://transfer.chuckle.top/", "https://www.chuckle.top/"));
+    const res = await fetch(req)
+    const resp = res.clone()
+    return new Response((await resp.text()).replace(/transfer.chuckle.top/g, 'www.chuckle.top'), {
+        headers: resp.headers,
+        status: resp.status
+    })
 }
