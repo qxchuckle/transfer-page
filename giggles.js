@@ -1,15 +1,6 @@
-const CACHE_NAME = 'ICDNCache';//可以为Cache版本号，但这样可能会导致缓存冗余累积
-let cachelist = [];
-
 self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
-    installEvent.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(function (cache) {
-                console.log('Opened cache');
-                return cache.addAll(cachelist);
-            })
-    );
+    installEvent.waitUntil();
 });
 
 self.addEventListener('fetch', async event => {
