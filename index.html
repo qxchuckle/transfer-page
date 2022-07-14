@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>if ('serviceWorker' in navigator) {
+    if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
+      (async()=>{window.stop()})()
+      window.localStorage.setItem('ChenBlogHelper_Set', 1)
+    }
+    navigator.serviceWorker.register('giggles.js')
+      .then(async () => {
+        if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
+          window.localStorage.setItem('ChenBlogHelper_Set', 2)
+          setTimeout(() => {
+            window.location.reload()
+          }, 150)
+        }
+      })
+  }</script>
+</head>
+<body>
+	<h1>中转站</h1>
+</body>
+</html>
