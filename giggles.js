@@ -17,5 +17,5 @@ self.addEventListener('fetch', async event => {
 });
 
 const handle = async (req) => {
-    return fetch(req.url.replace("https://transfer-page.vercel.app/", "https://www.chuckle.top/"));
+    return fetch(req.url.replace("https://zzchuckle.vercel.app/", "https://www.chuckle.top/"));
 }
