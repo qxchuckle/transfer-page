@@ -17,13 +17,5 @@ self.addEventListener('fetch', async event => {
 });
 
 const handle = async (req) => {
-    const res = await fetch(req)
-    const resp = res.clone()
-    if (!!resp.headers.get('content-type')) {
-            return new Response((await resp.text()).replace('transfer', 'www'), {
-                headers: resp.headers,
-                status: resp.status
-            })
-    }
-    return resp
+    return fetch(req.url.replace("https://transfer.chuckle.top/", "https://www.chuckle.top/"));
 }
