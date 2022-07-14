@@ -17,5 +17,5 @@ self.addEventListener('fetch', async event => {
 });
 
 const handle = async (req) => {
-    return fetch(req.url("https://www.chuckle.top/"));
+    return fetch(req.url.replace("https://transfer.chuckle.top/", "https://www.chuckle.top/"));
 }
