@@ -1,9 +1,6 @@
 const CACHE_NAME = 'ICDNCache';
 let cachelist = [];
 
-let cachelist = [
-];
-
 self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
     installEvent.waitUntil(
