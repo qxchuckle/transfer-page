@@ -10,8 +10,11 @@ self.addEventListener('fetch', async event => {
 const handle = async (req) => {
     const res = await fetch(req)
     const resp = res.clone()
-    return new Response((await resp.text()).replace(/transfer.chuckle.top/g, 'www.chuckle.top'), {
-        headers: resp.headers,
-        status: resp.status
-    })
+    if (!!resp.headers.get('content-type')) {
+            return new Response((await resp.text()).replace(/transfer/g, 'www'), {
+                headers: resp.headers,
+                status: resp.status
+            })
+    }
+    return resp
 }
