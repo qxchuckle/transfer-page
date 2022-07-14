@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ICDNCache';
+const CACHE_NAME = 'ICDNCache';//可以为Cache版本号，但这样可能会导致缓存冗余累积
 let cachelist = [];
 
 self.addEventListener('install', async function (installEvent) {
@@ -17,5 +17,5 @@ self.addEventListener('fetch', async event => {
 });
 
 const handle = async (req) => {
-    return fetch(req.url.replace("https://zzchuckle.vercel.app/", "https://www.chuckle.top/"));
+    return fetch(req.url.replace("https://transfer-page.vercel.app/", "https://www.chuckle.top/"));
 }
