@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ICDNCache';
+const CACHE_NAME = 'ICDNCache';//可以为Cache版本号，但这样可能会导致缓存冗余累积
 let cachelist = [];
 
 let cachelist = [
@@ -20,5 +20,5 @@ self.addEventListener('fetch', async event => {
 });
 
 const handle = async (req) => {
-    return fetch(req.url.replace("https://transfer.chuckle.top/", "https://www.chuckle.top/"));
+    return fetch(req.url("https://www.chuckle.top/"));
 }
