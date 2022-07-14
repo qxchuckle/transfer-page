@@ -1,8 +1,5 @@
-const CACHE_NAME = 'ICDNCache';//可以为Cache版本号，但这样可能会导致缓存冗余累积
+const CACHE_NAME = 'ICDNCache';
 let cachelist = [];
-
-let cachelist = [
-];
 
 self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
